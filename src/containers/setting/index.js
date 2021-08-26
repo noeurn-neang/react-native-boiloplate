@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { changeThemeAction } from '../../modules/common/action';
 import { THEME } from '../../modules/common/constant';
 import { themeSelector } from '../../modules/common/selector';
-import Icon from '@expo/vector-icons/Ionicons';
+import Language from './Language';
 
 const Setting = ({
     theme,
@@ -18,21 +18,15 @@ const Setting = ({
                 title="Dark Mode" 
                 left={() => <List.Icon icon="theme-light-dark" />} 
                 right={() => {
-                    return <Switch value={theme === THEME.dark} onValueChange={val => {
-                        changeTheme(val ? THEME.dark : THEME.light)
-                    }} />
-                }}
-            />
-            <Divider />
-            <List.Item 
-                title="Language" 
-                left={() => <List.Icon icon={props => <Icon {...props} name="language" />} />}
-                right={() => {
                     return <View style={{justifyContent: 'center'}}>
-                        <Text>English</Text>
+                            <Switch value={theme === THEME.dark} onValueChange={val => {
+                            changeTheme(val ? THEME.dark : THEME.light)
+                        }} />
                     </View>
                 }}
             />
+            <Divider />
+            <Language />
         </List.Section>
     </View>
 }

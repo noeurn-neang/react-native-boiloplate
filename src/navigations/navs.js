@@ -6,6 +6,7 @@ const navs = {
     // bottom tab
     home: "HomeScreen",
     setting: "SettingScreen",
+    player: "PlayerScreen",
 
     // auth
     login: "LoginScreen"
